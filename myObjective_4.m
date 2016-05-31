@@ -1,9 +1,9 @@
-function f = myObjective (hoist_inertia_engine, hoist_inertia_yy, hoist_friction, crowd_mass, crowd_inertia_yy, crowd_cog_x)
+function f = myObjective_4 (hoist_inertia_engine, inertia_yy, hoist_friction, crowd_mass)
 
 %% Initializations
 filename       = 'mining_dynamics';
-section_name   = {'[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Crowd_Properties]','[Section: Crowd_Properties]','[Section: Crowd_Properties]'}; 
-parameter_name = {'inertia_engine','inertia_yy','friction','mass','inertia_yy','cog_xx'};
+section_name   = {'[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Crowd_Properties]','[Section: Crowd_Properties]'}; 
+parameter_name = {'inertia_engine','inertia_yy','friction','mass','inertia_yy'};
 
 %% Data
 load data.mat
@@ -11,7 +11,7 @@ load data.mat
 % provides as output: u_hst_1, u_crd_1, y_hst_1, y_crd_1
 
 %% Optimization Variables
-des_values = [hoist_inertia_engine, hoist_inertia_yy, hoist_friction, crowd_mass, crowd_inertia_yy, crowd_cog_x];
+des_values = [hoist_inertia_engine, inertia_yy, hoist_friction, crowd_mass, inertia_yy];
 modify_SOA_parameters(filename, section_name, parameter_name,des_values)
 
 %% Penalty Factors
