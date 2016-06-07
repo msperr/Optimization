@@ -1,17 +1,15 @@
-tic;
-n = 50;
-f = @(x)myObjective(x(1),x(2),x(3),x(4),x(5),x(6));
-mean = [10,2000000,2000,200000,2000000,0];
-dev = [10,2000000,2000,200000,2000000,100];
-initpop = repmat(mean,n,1) + randn(n,6)*diag(dev);
+n = 40;
+f = @(x)objective(x(1),x(2),x(3),x(4));
+mean = [10,2000000,2000,200000];
+dev = [10,2000000,2000,200000];
+initpop = repmat(mean,n,1) + randn(n,4)*diag(dev);
 opts = optimoptions('particleswarm','InitialSwarmMatrix',initpop);
-lb = [0,0,0,0,0,-Inf];
+lb = [0,0,0,0];
 ub = [];
-[xps,fps,flps,ops] = particleswarm(f,6,lb,ub,opts)
-x_mod = xps*diag([1,1/100000,1/100,1/10000,1/100000,1/100])
+tic;
+[x_ps,fval_ps,exitflag_ps,output_ps] = particleswarm(f,4,lb,ub,opts);
 toc
 
 tic;
-[xps_2,fps_2,flps_2,ops_2] = particleswarm(f,6)
-x_mod = xps_2*diag([1,1/100000,1/100,1/10000,1/100000,1/100])
+[x_ps2,fval_ps2,exiflag_ps2,output_ps2] = particleswarm(f,4)
 toc
