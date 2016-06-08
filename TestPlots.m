@@ -1,4 +1,4 @@
-n = 100;
+n = 101;
 x = [15,3000000,1000,140000];
 d = [linspace(5,25,n);linspace(2000000,4000000,n);linspace(0,2000,n);linspace(120000,160000,n)];
 f = zeros(size(d));

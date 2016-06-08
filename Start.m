@@ -1,1 +1,3 @@
-addpath('../Blackbox');
+Patternsearch;
+Particleswarm;
+GA;
