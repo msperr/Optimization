@@ -1,8 +1,8 @@
 % to have correct values:
 filename       = 'mining_dynamics';
-section_name   = {'[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Crowd_Properties]','[Section: Crowd_Properties]'}; 
-parameter_name = {'inertia_engine','inertia_yy','friction','mass','inertia_yy'};
-des_values     = [15,3000000,1000,140000,3000000];
+section_name   = {'[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Crowd_Properties]','[Section: Crowd_Properties]','[Section: Crowd_Properties]'}; 
+parameter_name = {'inertia_engine','inertia_yy','friction','mass','inertia_yy','cog_x'};
+des_values     = [15,3000000,1000,140000,3000000,0];
 modify_SOA_parameters(filename, section_name, parameter_name,des_values);
 
 %% Initializations
