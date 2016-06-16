@@ -10,7 +10,7 @@ x0 = initpop(1,1:4);
 lb = [0,0,0,0];
 ub = [];
 tol = 1e-9;
-maxtime = 600;
+maxtime = 900;
 
 %% Particle Swarm
 tic;

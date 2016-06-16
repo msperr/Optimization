@@ -36,25 +36,41 @@ count = count+1;
 cmd_hst_pt(1:n_sim,count) = 100*sin(d);
 cmd_crd_pt(1:n_sim,count) = 100*sin(d);
 
-count = count+1;
-cmd_hst_pt(1:n_sim,count) = 100*ones(n_sim,1);
-cmd_crd_pt(1:n_sim,count) = zeros(n_sim,1);
+%count = count+1;
+%cmd_hst_pt(1:n_sim,count) = 100*ones(n_sim,1);
+%cmd_crd_pt(1:n_sim,count) = zeros(n_sim,1);
 
-count = count+1;
-cmd_hst_pt(1:n_sim,count) = zeros(n_sim,1);
-cmd_crd_pt(1:n_sim,count) = 100*ones(n_sim,1);
+%count = count+1;
+%cmd_hst_pt(1:n_sim,count) = zeros(n_sim,1);
+%cmd_crd_pt(1:n_sim,count) = 100*ones(n_sim,1);
 
-count = count+1;
-cmd_hst_pt(1:n_sim,count) = -100*ones(n_sim,1);
-cmd_crd_pt(1:n_sim,count) = zeros(n_sim,1);
+%count = count+1;
+%cmd_hst_pt(1:n_sim,count) = -100*ones(n_sim,1);
+%cmd_crd_pt(1:n_sim,count) = zeros(n_sim,1);
 
-count = count+1;
-cmd_hst_pt(1:n_sim,count) = zeros(n_sim,1);
-cmd_crd_pt(1:n_sim,count) = -100*ones(n_sim,1);
+%count = count+1;
+%cmd_hst_pt(1:n_sim,count) = zeros(n_sim,1);
+%cmd_crd_pt(1:n_sim,count) = -100*ones(n_sim,1);
 
 count = count+1;
 cmd_hst_pt(1:n_sim,count) = 200*rand(n_sim,1)-100;
 cmd_crd_pt(1:n_sim,count) = 200*rand(n_sim,1)-100;
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+cmd_crd_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+cmd_crd_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+cmd_crd_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+cmd_crd_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
 
 %% Output
 for i = 1:n_tra
