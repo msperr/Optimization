@@ -1,4 +1,4 @@
-% to have correct values:
+% to have correct parameter values:
 filename       = 'mining_dynamics';
 section_name   = {'[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Hoist_Properties]','[Section: Crowd_Properties]','[Section: Crowd_Properties]','[Section: Crowd_Properties]'}; 
 parameter_name = {'inertia_engine','inertia_yy','friction','mass','inertia_yy','cog_x'};
@@ -6,9 +6,12 @@ des_values     = [15,3000000,1000,140000,3000000,0];
 modify_SOA_parameters(filename, section_name, parameter_name,des_values);
 
 %% Initializations
-n_tra = 9;
+n_tra = 20;
 n_sim = 1000;
-d = (0:2*pi/(n_sim-1):2*pi)';
+d1 = linspace(0,pi,n_sim);
+d2 = linspace(0,2*pi,n_sim);
+d3 = linspace(0,3*pi,n_sim);
+d4 = linspace(0,4*pi,n_sim);
 
 cmd_hst_pt = zeros(n_sim,n_tra);
 cmd_crd_pt = zeros(n_sim,n_tra);
@@ -29,28 +32,48 @@ cmd_hst_pt(1:n_sim,count) = [100*ones(500,1); -100*ones(500,1)];
 cmd_crd_pt(1:n_sim,count) = [-100*ones(500,1); 100*ones(500,1)];
 
 count = count+1;
-cmd_hst_pt(1:n_sim,count) = 100*cos(d);
-cmd_crd_pt(1:n_sim,count) = 100*cos(d);
+cmd_hst_pt(1:n_sim,count) = 100*sin(d1);
+cmd_crd_pt(1:n_sim,count) = 100*sin(d1);
 
 count = count+1;
-cmd_hst_pt(1:n_sim,count) = 100*sin(d);
-cmd_crd_pt(1:n_sim,count) = 100*sin(d);
+cmd_hst_pt(1:n_sim,count) = 100*cos(d2);
+cmd_crd_pt(1:n_sim,count) = 100*cos(d2);
 
-%count = count+1;
-%cmd_hst_pt(1:n_sim,count) = 100*ones(n_sim,1);
-%cmd_crd_pt(1:n_sim,count) = zeros(n_sim,1);
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = 100*sin(d2);
+cmd_crd_pt(1:n_sim,count) = 100*sin(d2);
 
-%count = count+1;
-%cmd_hst_pt(1:n_sim,count) = zeros(n_sim,1);
-%cmd_crd_pt(1:n_sim,count) = 100*ones(n_sim,1);
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = 100*sin(d2);
+cmd_crd_pt(1:n_sim,count) = 100*cos(d2);
 
-%count = count+1;
-%cmd_hst_pt(1:n_sim,count) = -100*ones(n_sim,1);
-%cmd_crd_pt(1:n_sim,count) = zeros(n_sim,1);
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = 100*cos(d2);
+cmd_crd_pt(1:n_sim,count) = 100*sin(d2);
 
-%count = count+1;
-%cmd_hst_pt(1:n_sim,count) = zeros(n_sim,1);
-%cmd_crd_pt(1:n_sim,count) = -100*ones(n_sim,1);
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = 100*cos(d4);
+cmd_crd_pt(1:n_sim,count) = 100*cos(d4);
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = 12.5*rand*sin(d1)+12.5*rand*sin(d2)+12.5*rand*sin(d3)+12.5*rand*sin(d4)+12.5*rand*cos(d1)+12.5*rand*cos(d2)+12.5*rand*cos(d3)+12.5*rand*cos(d4);
+cmd_crd_pt(1:n_sim,count) = 12.5*rand*sin(d1)+12.5*rand*sin(d2)+12.5*rand*sin(d3)+12.5*rand*sin(d4)+12.5*rand*cos(d1)+12.5*rand*cos(d2)+12.5*rand*cos(d3)+12.5*rand*cos(d4);
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = 100*ones(n_sim,1);
+cmd_crd_pt(1:n_sim,count) = zeros(n_sim,1);
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = zeros(n_sim,1);
+cmd_crd_pt(1:n_sim,count) = 100*ones(n_sim,1);
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = -100*ones(n_sim,1);
+cmd_crd_pt(1:n_sim,count) = zeros(n_sim,1);
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = zeros(n_sim,1);
+cmd_crd_pt(1:n_sim,count) = -100*ones(n_sim,1);
 
 count = count+1;
 cmd_hst_pt(1:n_sim,count) = 200*rand(n_sim,1)-100;
@@ -71,6 +94,14 @@ cmd_crd_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repm
 count = count+1;
 cmd_hst_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
 cmd_crd_pt(1:n_sim,count) = -100+200*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = 100*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+cmd_crd_pt(1:n_sim,count) = 100*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = -100*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
+cmd_crd_pt(1:n_sim,count) = -100*[repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1);repmat(rand,100,1)];
 
 %% Output
 for i = 1:n_tra

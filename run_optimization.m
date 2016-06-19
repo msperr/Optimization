@@ -15,7 +15,7 @@ maxtime = 900;
 %% Particle Swarm
 tic;
 disp('Particleswarm');
-options = optimoptions('particleswarm','InitialSwarmMatrix',initpop,'FunctionTolerance',tol,'MaxTime',maxtime);
+options = optimoptions('particleswarm','InitialSwarmMatrix',initpop,'FunctionTolerance',tol,'MaxTime',maxtime,'PlotFcn',@pswplotbestf);
 [x_ps,fval_ps,exitflag_ps,output_ps] = particleswarm(f,4,lb,ub,options);
 disp(['f = ',num2str(fval_ps)]);
 disp(['x = ',num2str(x_ps(1)),'   ',num2str(x_ps(2)),'   ',num2str(x_ps(3)),'   ',num2str(x_ps(4))]);
