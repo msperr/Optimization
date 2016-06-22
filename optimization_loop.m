@@ -41,5 +41,3 @@ x(count_opt,:,:)         = [x_ps',x_p',x_ga',x_sa'];
 fval(count_opt,:,:)      = [fval_ps,fval_p,fval_ga,fval_sa];
 funccount(count_opt,:,:) = [funccount_ps,funccount_p,funccount_ga,funccount_sa];
 sol_dev(count_opt,:,:)   = [sol_dev_ps',sol_dev_p',sol_dev_ga',sol_dev_sa'];
-
-disp(time);
