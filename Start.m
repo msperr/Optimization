@@ -210,3 +210,207 @@ sol_dev_7   = sol_dev;
 save('optimization_results.mat','time_7','x_7','fval_7','funccount_7','sol_dev_7','-append');
 disp('Saving successful');
 disp('-------------------------------------------------------------');
+
+%% Initializations
+f         = @(x)objective_mod(0,0,[],[],x(1),x(2),x(3),x(4));
+
+%% Case 8
+disp('-------------------------------------------------------------'); 
+disp('Case 8 - Swarmsize: 10, Mean Factor: 1, Deviation Factor: 50%, Torques off');
+swarmsize   = 10;
+mean        = mean_init;
+dev         = 0.5*mean;
+
+time      = zeros(loops,solvers);
+x         = zeros(loops,solvers,var);
+fval      = zeros(loops,solvers);
+funccount = zeros(loops,solvers);
+sol_dev   = zeros(loops,solvers,var);
+
+for count_opt=1:loops
+    disp(['Loop ',num2str(count_opt)]);
+    optimization_loop;
+end
+
+time_8      = time;
+x_8         = x;
+fval_8      = fval;
+funccount_8 = funccount;
+sol_dev_8   = sol_dev;
+
+save('optimization_results.mat','time_8','x_8','fval_8','funccount_8','sol_dev_8','-append');
+disp('Saving successful');
+disp('-------------------------------------------------------------');
+disp(' ');
+
+%% Case 9
+disp('-------------------------------------------------------------');
+disp ('Case 9 - Swarmsize: 10, Mean Factor: 1, Deviation Factor: 5%, Torques off');
+swarmsize   = 10;
+mean        = mean_init;
+dev         = 0.05*mean;
+
+time      = zeros(loops,solvers);
+x         = zeros(loops,solvers,var);
+fval      = zeros(loops,solvers);
+funccount = zeros(loops,solvers);
+sol_dev   = zeros(loops,solvers,var);
+
+for count_opt=1:loops
+    disp(['Loop ',num2str(count_opt)]);
+    optimization_loop;
+end
+
+time_9      = time;
+x_9         = x;
+fval_9      = fval;
+funccount_9 = funccount;
+sol_dev_9   = sol_dev;
+
+save('optimization_results.mat','time_9','x_9','fval_9','funccount_9','sol_dev_9','-append');
+disp('Saving successful');
+disp('-------------------------------------------------------------');
+disp(' ');
+
+%% Case 10
+disp('-------------------------------------------------------------');
+disp ('Case 10 - Swarmsize: 10, Mean Factor: 1, Deviation Factor: 0.5%, Torques off');
+swarmsize   = 10;
+mean        = mean_init;
+dev         = 0.005*mean;
+
+time      = zeros(loops,solvers);
+x         = zeros(loops,solvers,var);
+fval      = zeros(loops,solvers);
+funccount = zeros(loops,solvers);
+sol_dev   = zeros(loops,solvers,var);
+
+for count_opt=1:loops
+    disp(['Loop ',num2str(count_opt)]);
+    optimization_loop;
+end
+
+time_10      = time;
+x_10         = x;
+fval_10      = fval;
+funccount_10 = funccount;
+sol_dev_10   = sol_dev;
+
+save('optimization_results.mat','time_10','x_10','fval_10','funccount_10','sol_dev_10','-append');
+disp('Saving successful');
+disp('-------------------------------------------------------------');
+disp(' ');
+
+%% Case 11
+disp('-------------------------------------------------------------');
+disp ('Case 11 - Swarmsize: 10, Mean Factor: 0.1, Deviation Factor: 50%, Torques off');
+swarmsize   = 10;
+mean        = 0.1*mean_init;
+dev         = 0.5*mean;
+
+time      = zeros(loops,solvers);
+x         = zeros(loops,solvers,var);
+fval      = zeros(loops,solvers);
+funccount = zeros(loops,solvers);
+sol_dev   = zeros(loops,solvers,var);
+
+for count_opt=1:loops
+    disp(['Loop ',num2str(count_opt)]);
+    optimization_loop;
+end
+
+time_11      = time;
+x_11         = x;
+fval_11      = fval;
+funccount_11 = funccount;
+sol_dev_11   = sol_dev;
+
+save('optimization_results.mat','time_11','x_11','fval_11','funccount_11','sol_dev_11','-append');
+disp('Saving successful');
+disp('-------------------------------------------------------------');
+disp(' ');
+
+%% Case 12
+disp('-------------------------------------------------------------');
+disp ('Case 12 - Swarmsize: 10, Mean Factor: 10, Deviation Factor: 50%, Torques off');
+swarmsize   = 10;
+mean        = 10*mean_init;
+dev         = 0.5*mean;
+
+time      = zeros(loops,solvers);
+x         = zeros(loops,solvers,var);
+fval      = zeros(loops,solvers);
+funccount = zeros(loops,solvers);
+sol_dev   = zeros(loops,solvers,var);
+
+for count_opt=1:loops
+    disp(['Loop ',num2str(count_opt)]);
+    optimization_loop;
+end
+
+time_12      = time;
+x_12         = x;
+fval_12      = fval;
+funccount_12 = funccount;
+sol_dev_12   = sol_dev;
+
+save('optimization_results.mat','time_12','x_12','fval_12','funccount_12','sol_dev_12','-append');
+disp('Saving successful');
+disp('-------------------------------------------------------------');
+disp(' ');
+
+%% Case 13
+disp ('Case 13 - Swarmsize: 40, Mean Factor: 1, Deviation Factor: 50%, Torques off');
+swarmsize   = 40;
+mean        = mean_init;
+dev         = 0.5*mean;
+
+time      = zeros(loops,solvers);
+x         = zeros(loops,solvers,var);
+fval      = zeros(loops,solvers);
+funccount = zeros(loops,solvers);
+sol_dev   = zeros(loops,solvers,var);
+
+for count_opt=1:loops
+    disp(['Loop ',num2str(count_opt)]);
+    optimization_loop;
+end
+
+time_13      = time;
+x_13         = x;
+fval_13      = fval;
+funccount_13 = funccount;
+sol_dev_13   = sol_dev;
+
+save('optimization_results.mat','time_13','x_13','fval_13','funccount_13','sol_dev_13','-append');
+disp('Saving successful');
+disp('-------------------------------------------------------------');
+disp(' ');
+
+%% Case 14
+disp('-------------------------------------------------------------');
+disp ('Case 14 - Swarmsize: 4, Mean Factor: 1, Deviation Factor: 50%, Torques off');
+swarmsize   = 4;
+mean        = mean_init;
+dev         = 0.5*mean;
+
+time      = zeros(loops,solvers);
+x         = zeros(loops,solvers,var);
+fval      = zeros(loops,solvers);
+funccount = zeros(loops,solvers);
+sol_dev   = zeros(loops,solvers,var);
+
+for count_opt=1:loops
+    disp(['Loop ',num2str(count_opt)]);
+    optimization_loop;
+end
+
+time_14      = time;
+x_14         = x;
+fval_14      = fval;
+funccount_14 = funccount;
+sol_dev_14   = sol_dev;
+
+save('optimization_results.mat','time_14','x_14','fval_14','funccount_14','sol_dev_14','-append');
+disp('Saving successful');
+disp('-------------------------------------------------------------');
