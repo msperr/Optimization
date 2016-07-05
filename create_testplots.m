@@ -1,6 +1,6 @@
 n = 101;
 x = [15,3000000,1000,140000];
-d = [linspace(10,20,n);linspace(2500000,3500000,n);linspace(0,2000,n);linspace(130000,150000,n)];
+d = [linspace(10,20,n);linspace(2500000,3500000,n);linspace(500,1500,n);linspace(100000,180000,n)];
 f = zeros(size(d));
 for i = 1:n
     f(1,i) = objective(d(1,i),x(2),x(3),x(4));

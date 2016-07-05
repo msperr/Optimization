@@ -6,7 +6,7 @@ des_values     = [15,3000000,1000,140000,3000000,0];
 modify_SOA_parameters(filename, section_name, parameter_name,des_values);
 
 %% Initializations
-n_tra = 20;
+n_tra = 22;
 n_sim = 1000;
 d1 = linspace(0,pi,n_sim);
 d2 = linspace(0,2*pi,n_sim);
@@ -23,6 +23,14 @@ y_crd_1 = zeros(n_sim,n_tra);
 count = 0;
 
 %% Joystick Commands
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = [linspace(0,-90,200)';-90*ones(200,1);linspace(-90,50,300)';50*ones(300,1)];
+cmd_crd_pt(1:n_sim,count) = [linspace(0,90,100)';90*ones(400,1);linspace(90,-90,200)';-90*ones(300,1)];
+
+count = count+1;
+cmd_hst_pt(1:n_sim,count) = [linspace(0,-90,200)';-90*ones(200,1);linspace(-90,50,300)';50*ones(300,1)];
+cmd_crd_pt(1:n_sim,count) = [linspace(0,90,100)';90*ones(300,1);linspace(90,0,100)';zeros(200,1);linspace(0,-30,100)';-30*ones(200,1)];
+
 count = count+1;
 cmd_hst_pt(1:n_sim,count) = [-100*ones(300,1);zeros(400,1);100*ones(200,1);zeros(100,1)];
 cmd_crd_pt(1:n_sim,count) = [zeros(400,1);100*ones(300,1);0*ones(300,1)];
